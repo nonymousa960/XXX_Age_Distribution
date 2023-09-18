@@ -1,0 +1,22 @@
+%%capture
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import statsmodels.api as sm
+!pip install mplcursors
+import mplcursors
+
+!pip install plotly
+import plotly.express as px
+import plotly.graph_objects as go
+
+#data set availble in repository
+df = pd.read_csv('/content/Pornstars.csv')
+
+# Plot the age distribution
+plt.figure(figsize=(8, 6))
+sns.histplot(data=df, x='Age', bins=20, kde=True)
+plt.title('Age Distribution of Adult Film Stars')
+plt.xlabel('Age')
+plt.ylabel('Frequency')
+plt.show()
